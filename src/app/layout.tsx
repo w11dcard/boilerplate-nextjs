@@ -5,8 +5,8 @@ import TopNav from "../components/TopNav"
 import "./globals.css"
 
 export const metadata: Metadata = {
-	title: "Next App",
-	description: "Next App Description",
+	title: "Next.js App",
+	description: "Next.js App Description",
 }
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
