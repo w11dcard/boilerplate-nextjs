@@ -7,7 +7,7 @@ Simple setup for starting a Next.js-powered website.
 - Next.js App Router
 - TypeScript
 - Tailwind CSS
-- shadcn/ui components
+- shadcn/ui support
 - NextAuth for authentication
 - Prisma ORM for integration with PostgreSQL database
 - Prettier & ESLint support
