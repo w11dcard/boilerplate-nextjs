@@ -26,13 +26,10 @@ function AuthButton() {
 }
 
 export default function TopNav() {
-	const { data: session } = useSession()
-
 	return (
 		<nav className="flex items-center justify-between px-4 py-2">
 			<div className="flex items-center space-x-4 font-bold">
 				<Link href="/">Home</Link>
-				{session && <Link href="/dashboard">Admin Dashboard</Link>}
 			</div>
 			<AuthButton />
 		</nav>

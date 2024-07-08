@@ -2,6 +2,7 @@ import SessionProvider from "@/src/components/SessionProvider"
 import type { Metadata } from "next"
 import { getServerSession } from "next-auth"
 import TopNav from "../components/TopNav"
+import { authOptions } from "../lib/auth"
 import "./globals.css"
 
 export const metadata: Metadata = {
@@ -10,14 +11,14 @@ export const metadata: Metadata = {
 }
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
-	const session = await getServerSession()
+	const session = await getServerSession(authOptions)
 
 	return (
 		<html lang="en">
 			<body>
 				<SessionProvider session={session}>
 					<TopNav />
-					<main className="">{children}</main>
+					<main>{children}</main>
 				</SessionProvider>
 			</body>
 		</html>

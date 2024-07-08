@@ -7,6 +7,11 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+enum UserRole {
+  ADMIN
+  USER
+}
+
 // Necessary for Next auth
 model Account {
   id                String  @id @default(cuid())
@@ -36,11 +41,6 @@ model Session {
   @@index([userId])
 }
 
-enum UserRole {
-  ADMIN
-  USER
-}
-
 model User {
   id            String    @id @default(cuid())
   name          String?
@@ -49,6 +49,5 @@ model User {
   image         String?
   accounts      Account[]
   sessions      Session[]
-
-  role UserRole @default(USER)
+  role          UserRole  @default(USER)
 }
