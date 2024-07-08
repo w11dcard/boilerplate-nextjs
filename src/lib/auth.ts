@@ -39,31 +39,19 @@ export const authOptions = {
 	callbacks: {
 		async session({ session, user }) {
 			if (user) {
-				session.user.id = user.id
-				session.user.name = user.name
-				session.user.email = user.email
-				session.user.role = user.role
-				session.user.image = user.image
+				session.user = { ...user } // Copy user data to session
 			}
 			return session
 		},
 		async jwt({ token, user }) {
 			if (user) {
-				token.id = user.id
-				token.name = user.name
-				token.email = user.email
-				token.role = user.role
-				token.image = user.image
+				token = { ...user } // Copy user data to token
 			} else {
 				const dbUser = await prisma.user.findFirst({
 					where: { email: token.email },
 				})
 				if (dbUser) {
-					token.id = dbUser.id
-					token.name = dbUser.name
-					token.email = dbUser.email
-					token.role = dbUser.role
-					token.image = dbUser.image
+					token = { ...dbUser } // Copy dbUser data to token
 				}
 			}
 			return token

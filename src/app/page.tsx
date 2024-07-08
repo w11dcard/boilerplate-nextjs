@@ -1,6 +1,5 @@
 "use client"
 
-import { Button } from "@/src/components/ui/button"
 import { useState } from "react"
 
 export default function Home() {
@@ -15,16 +14,16 @@ export default function Home() {
 				color: isDarkMode ? "var(--foreground)" : "var(--foreground)",
 			}}
 		>
-			<Button
-				className={`rounded-full border px-4 py-2 font-semibold ${isDarkMode ? "dark" : ""}`}
+			<button
+				className={`button ${isDarkMode ? "dark" : ""}`}
 				style={{
-					backgroundColor: isDarkMode ? "var(--card)" : "var(--card)",
+					backgroundColor: isDarkMode ? "var(--background)" : "var(--background)",
 					color: isDarkMode ? "var(--foreground)" : "var(--foreground)",
 				}}
 				onClick={toggleTheme}
 			>
 				Hello World!
-			</Button>
+			</button>
 		</main>
 	)
 }

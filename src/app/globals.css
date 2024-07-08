@@ -64,11 +64,22 @@
 	}
 }
 
-@layer base {
-	* {
-		@apply border-border;
-	}
+.button {
+	box-shadow: 0 0 4px 0px var(--foreground);
+	color: var(--foreground);
+	font-weight: 700;
+	border-radius: 9999px;
+	padding-left: 1rem;
+	padding-right: 1rem;
+	padding-top: 0.5rem;
+	padding-bottom: 0.5rem;
+}
 
+.button:hover {
+	background-color: var(--card);
+}
+
+@layer base {
 	body {
 		@apply bg-background text-foreground;
 	}
