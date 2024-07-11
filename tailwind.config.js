@@ -11,39 +11,39 @@ const config = {
 		},
 		extend: {
 			colors: {
-				background: "rgb(var(--background))",
-				foreground: "rgb(var(--foreground))",
+				background: "var(--background)",
+				foreground: "var(--foreground)",
 				card: {
-					DEFAULT: "rgb(var(--card))",
-					foreground: "rgb(var(--card-foreground))",
+					DEFAULT: "var(--card)",
+					foreground: "var(--card-foreground)",
 				},
 				popover: {
-					DEFAULT: "rgb(var(--popover))",
-					foreground: "rgb(var(--popover-foreground))",
+					DEFAULT: "var(--popover)",
+					foreground: "var(--popover-foreground)",
 				},
 				primary: {
-					DEFAULT: "rgb(var(--primary))",
-					foreground: "rgb(var(--primary-foreground))",
+					DEFAULT: "var(--primary)",
+					foreground: "var(--primary-foreground)",
 				},
 				secondary: {
-					DEFAULT: "rgb(var(--secondary))",
-					foreground: "rgb(var(--secondary-foreground))",
+					DEFAULT: "var(--secondary)",
+					foreground: "var(--secondary-foreground)",
 				},
 				muted: {
-					DEFAULT: "rgb(var(--muted))",
-					foreground: "rgb(var(--muted-foreground))",
+					DEFAULT: "var(--muted)",
+					foreground: "var(--muted-foreground)",
 				},
 				accent: {
-					DEFAULT: "rgb(var(--accent))",
-					foreground: "rgb(var(--accent-foreground))",
+					DEFAULT: "var(--accent)",
+					foreground: "var(--accent-foreground)",
 				},
 				destructive: {
-					DEFAULT: "rgb(var(--destructive))",
-					foreground: "rgb(var(--destructive-foreground))",
+					DEFAULT: "var(--destructive)",
+					foreground: "var(--destructive-foreground)",
 				},
-				input: "rgb(var(--input))",
-				border: "rgb(var(--border))",
-				ring: "rgb(var(--ring))",
+				input: "var(--input)",
+				border: "var(--border)",
+				ring: "var(--ring)",
 			},
 			borderRadius: {
 				lg: "var(--radius)",
