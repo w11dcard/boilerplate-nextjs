@@ -2,28 +2,7 @@ import prisma from "@/src/lib/db"
 import { PrismaAdapter } from "@next-auth/prisma-adapter"
 import { SessionStrategy } from "next-auth"
 import GitHubProvider from "next-auth/providers/github"
-
-declare module "next-auth" {
-	interface Session {
-		user: {
-			id: string
-			name: string
-			email: string
-			role: string
-			image: string
-		}
-	}
-}
-
-declare module "next-auth/jwt" {
-	interface JWT {
-		id: string
-		name: string
-		email: string
-		role: string
-		image: string
-	}
-}
+import GoogleProvider from "next-auth/providers/google"
 
 export const authOptions = {
 	providers: [
@@ -31,6 +10,18 @@ export const authOptions = {
 			clientId: process.env.GITHUB_ID ?? "",
 			clientSecret: process.env.GITHUB_SECRET ?? "",
 			allowDangerousEmailAccountLinking: true,
+		}),
+		GoogleProvider({
+			clientId: process.env.GOOGLE_ID ?? "",
+			clientSecret: process.env.GOOGLE_SECRET ?? "",
+			allowDangerousEmailAccountLinking: true,
+			authorization: {
+				params: {
+					prompt: "consent",
+					access_type: "offline",
+					response_type: "code",
+				},
+			},
 		}),
 	],
 	session: {
