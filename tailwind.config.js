@@ -32,6 +32,8 @@ const config = {
 					DEFAULT: "var(--destructive)",
 					foreground: "var(--destructive-foreground)",
 				},
+				google: "#DB4437", // Google Login
+				github: "#333333", // GitHub Login
 			},
 			borderRadius: {
 				lg: "var(--radius)",

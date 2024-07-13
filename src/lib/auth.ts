@@ -4,6 +4,17 @@ import { SessionStrategy } from "next-auth"
 import GitHubProvider from "next-auth/providers/github"
 import GoogleProvider from "next-auth/providers/google"
 
+declare module "next-auth" {
+	interface Session {
+		user: {
+			id: string
+			name: string
+			email: string
+			image: string
+		}
+	}
+}
+
 export const authOptions = {
 	providers: [
 		GitHubProvider({
