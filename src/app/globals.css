@@ -60,17 +60,21 @@
 	background-color: var(--muted);
 }
 
-.avatar {
-	color: var(--foreground);
-	box-shadow: 0 0 2px 0px var(--foreground);
-	border-radius: 9999px;
-}
-
-.button-login {
+.button-signin {
 	color: var(--accent-foreground);
 	box-shadow: 0 0 2px 0px var(--foreground);
 	border-radius: 0.25rem;
 	padding: 0.5rem;
 	width: 320px;
 	font-weight: 700;
+}
+
+.button-signin:hover {
+	opacity: 0.8;
+}
+
+.avatar {
+	color: var(--foreground);
+	box-shadow: 0 0 2px 0px var(--foreground);
+	border-radius: 9999px;
 }
