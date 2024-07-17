@@ -1,6 +1,6 @@
-import SessionProvider from "@/src/components/SessionProvider"
 import type { Metadata } from "next"
 import { getServerSession } from "next-auth"
+import Providers from "../components/Providers"
 import TopNav from "../components/TopNav"
 import { authOptions } from "../lib/auth"
 import "./globals.css"
@@ -16,10 +16,10 @@ export default async function RootLayout({ children }: { children: React.ReactNo
 	return (
 		<html lang="en">
 			<body>
-				<SessionProvider session={session}>
+				<Providers session={session}>
 					<TopNav />
 					<main>{children}</main>
-				</SessionProvider>
+				</Providers>
 			</body>
 		</html>
 	)
