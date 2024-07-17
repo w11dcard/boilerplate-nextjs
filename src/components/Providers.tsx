@@ -37,5 +37,3 @@ export default function Providers({ children, session }: { children: React.React
 		</SessionProvider>
 	)
 }
-
-// export function SessionProvider
