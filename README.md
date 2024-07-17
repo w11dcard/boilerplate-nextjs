@@ -9,7 +9,8 @@ Simple setup for starting a Next.js-powered website.
 - Tailwind CSS
 - Simple light/dark theme switcher
 - NextAuth for authentication
-- Prisma ORM for handling database operations.
+- TanStack Query for data fetching
+- Prisma ORM for handling database operations
 - Prettier & ESLint support
 
 ## Getting Started
