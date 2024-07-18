@@ -27,13 +27,6 @@ export const authOptions = {
 			clientId: process.env.GOOGLE_ID ?? "",
 			clientSecret: process.env.GOOGLE_SECRET ?? "",
 			allowDangerousEmailAccountLinking: true,
-			authorization: {
-				params: {
-					prompt: "consent",
-					access_type: "offline",
-					response_type: "code",
-				},
-			},
 		}),
 	],
 	session: {
@@ -58,6 +51,15 @@ export const authOptions = {
 				}
 			}
 			return token
+		},
+		async signIn({ account }) {
+			if (account) {
+				account.accessToken = account.access_token
+				account.tokenType = account.token_type
+				delete account.access_token
+				delete account.token_type
+			}
+			return true
 		},
 	},
 }
