@@ -1,26 +1,26 @@
 "use client"
 
-import { useState } from "react"
+import { useQuery } from "@tanstack/react-query"
+
+const getMessage = async () => {
+	const response = await fetch("/api/hello")
+	if (!response.ok) throw new Error("Failed to fetch data")
+	return response.json()
+}
 
 export default function Home() {
-	const [message, setMessage] = useState("Test GET Request")
-
-	const handleGetMessage = async () => {
-		try {
-			const response = await fetch("/api/hello") // Fetch data from API endpoint
-			const data = await response.json() // Parse JSON data
-			setMessage(data.message) // Set message from response
-		} catch (error) {
-			console.error(error)
-			setMessage("Error fetching data") // Set static error message
-		}
-	}
+	const { data, refetch, isFetched } = useQuery({
+		queryKey: ["get-message"],
+		queryFn: getMessage,
+		enabled: false,
+	})
 
 	return (
-		<div className="flex items-center justify-center">
-			<button className="button" onClick={handleGetMessage}>
-				{message}
+		<div className="flex flex-col items-center justify-center gap-4">
+			<button className="button" onClick={() => refetch()}>
+				Hello World!
 			</button>
+			<strong>{isFetched && JSON.stringify(data, null, 2)}</strong>
 		</div>
 	)
 }
