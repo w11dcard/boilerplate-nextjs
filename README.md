@@ -1,4 +1,4 @@
-# Next.js Boilerplate
+# Next.js Boilerplate 📚🚀
 
 Simple setup for starting a Next.js-powered website.
 
@@ -9,7 +9,7 @@ Simple setup for starting a Next.js-powered website.
 - Tailwind CSS
 - Simple light/dark theme switcher
 - NextAuth for authentication
-- TanStack Query for data fetching
+- React Query support for data fetching
 - Prisma ORM for handling database operations
 - Prettier & ESLint support
 

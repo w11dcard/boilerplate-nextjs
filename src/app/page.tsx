@@ -20,7 +20,7 @@ export default function Home() {
 			<button className="button" onClick={() => refetch()}>
 				Hello World!
 			</button>
-			<strong>{isFetched && JSON.stringify(data, null, 2)}</strong>
+			<strong>{isFetched && JSON.stringify(data)}</strong>
 		</div>
 	)
 }
