@@ -39,6 +39,7 @@ export const authOptions = {
 			}
 			return session
 		},
+
 		async jwt({ token, user }) {
 			if (user) {
 				token = { ...user } // Copy user data to token
@@ -52,12 +53,15 @@ export const authOptions = {
 			}
 			return token
 		},
+
 		async signIn({ account }) {
 			if (account) {
 				account.accessToken = account.access_token
 				account.tokenType = account.token_type
+				account.accessTokenExpires = account.expires_at
 				delete account.access_token
 				delete account.token_type
+				delete account.expires_at
 			}
 			return true
 		},
