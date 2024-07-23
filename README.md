@@ -7,7 +7,9 @@ Simple setup for starting a Next.js-powered website.
 - Next.js App Router
 - TypeScript
 - Tailwind CSS
+- shadcn/ui suport for components
 - Simple light/dark theme switcher
+- Sample API route with React Query
 - NextAuth for authentication
 - React Query support for data fetching
 - Prisma ORM for handling database operations
@@ -15,8 +17,8 @@ Simple setup for starting a Next.js-powered website.
 
 ## Getting Started
 
-1. Clone this repository inside the project folder: `git clone https://github.com/w11dcard/next-boilerplate .`
-2. Install dependencies for the project: `npm install`
+1. Clone this repository inside the project folder: `git clone https://github.com/w11dcard/boilerplate-nextjs .`
+2. Install dependencies: `npm install`
 
 ## 📬 Contact
 
