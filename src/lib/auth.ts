@@ -59,9 +59,11 @@ export const authOptions = {
 				account.accessToken = account.access_token
 				account.tokenType = account.token_type
 				account.accessTokenExpires = account.expires_at
+				account.tokenId = account.id_token
 				delete account.access_token
 				delete account.token_type
 				delete account.expires_at
+				delete account.id_token
 			}
 			return true
 		},
