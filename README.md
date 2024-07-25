@@ -9,7 +9,6 @@ Simple setup for starting a Next.js-powered website.
 - Tailwind CSS
 - shadcn/ui suport for components
 - Simple light/dark theme switcher
-- Sample API route with React Query
 - NextAuth for authentication
 - React Query support for data fetching
 - Prisma ORM for handling database operations

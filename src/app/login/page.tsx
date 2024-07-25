@@ -18,11 +18,11 @@ export default function LoginPage() {
 					<p className="mt-4 text-lg text-muted-foreground">Sign in with your preferred provider</p>
 				</div>
 
-				<div className="flex flex-col items-center justify-center p-4">
-					<button className="button-signin bg-github" onClick={() => signIn("github")}>
+				<div className="flex flex-col items-center justify-center gap-4 p-4">
+					<button className="button w-72 bg-github text-accent-foreground" onClick={() => signIn("github")}>
 						Sign In With GitHub
 					</button>
-					<button className="button-signin bg-google" onClick={() => signIn("google")}>
+					<button className="button w-72 bg-google text-accent-foreground" onClick={() => signIn("google")}>
 						Sign In With Google
 					</button>
 				</div>

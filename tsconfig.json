@@ -6,7 +6,6 @@
 		"jsx": "preserve",
 		"allowJs": true,
 		"strict": true,
-		"noUncheckedIndexedAccess": true,
 		"noImplicitAny": false,
 		"skipLibCheck": true,
 		"noEmit": true,

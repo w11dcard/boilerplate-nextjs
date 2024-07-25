@@ -16,7 +16,7 @@ function ThemeButton() {
 	}, [theme])
 
 	return (
-		<button onClick={toggleTheme} className="button h-8 w-8">
+		<button onClick={toggleTheme} className="button flex h-10 w-10 items-center justify-center">
 			<Icon icon={theme === "light" ? "material-symbols:light-mode-rounded" : "material-symbols:dark-mode-rounded"} />
 		</button>
 	)
@@ -26,14 +26,14 @@ export default function TopNav() {
 	const { data: session } = useSession()
 
 	return (
-		<nav className="mb-8 flex items-center justify-between px-4 py-2 shadow-md">
-			<div className="flex items-center space-x-2">
+		<nav className="mb-8 flex items-center justify-between p-2 shadow-md">
+			<div className="flex items-center gap-2">
 				<Link className="button" href="/">
 					Home
 				</Link>
 			</div>
 
-			<div className="flex items-center space-x-2">
+			<div className="flex items-center gap-2">
 				<ThemeButton />
 				{session ? (
 					<>
@@ -41,7 +41,7 @@ export default function TopNav() {
 							Sign Out
 						</button>
 						{session.user.image && (
-							<Image src={session.user.image} alt={session.user.name} width={45} height={45} className="avatar" />
+							<Image src={session.user.image} alt={session.user.name || ""} width={45} height={45} className="avatar" />
 						)}
 					</>
 				) : (

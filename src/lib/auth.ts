@@ -1,71 +1,61 @@
 import prisma from "@/src/lib/db"
 import { PrismaAdapter } from "@next-auth/prisma-adapter"
-import { SessionStrategy } from "next-auth"
+import { DefaultSession, SessionStrategy } from "next-auth"
 import GitHubProvider from "next-auth/providers/github"
 import GoogleProvider from "next-auth/providers/google"
 
 declare module "next-auth" {
-	interface Session {
+	interface Session extends DefaultSession {
 		user: {
 			id: string
-			name: string
-			email: string
-			image: string
-		}
+		} & DefaultSession["user"]
+	}
+}
+
+declare module "next-auth/jwt" {
+	interface JWT {
+		id: string
 	}
 }
 
 export const authOptions = {
-	adapter: PrismaAdapter(prisma),
 	providers: [
 		GitHubProvider({
 			clientId: process.env.GITHUB_ID ?? "",
 			clientSecret: process.env.GITHUB_SECRET ?? "",
-			allowDangerousEmailAccountLinking: true,
 		}),
 		GoogleProvider({
 			clientId: process.env.GOOGLE_ID ?? "",
 			clientSecret: process.env.GOOGLE_SECRET ?? "",
-			allowDangerousEmailAccountLinking: true,
 		}),
 	],
+	adapter: PrismaAdapter(prisma),
 	session: {
 		strategy: "database" as SessionStrategy,
 	},
 	callbacks: {
-		async session({ session, user }) {
-			if (user) {
-				session.user = { ...user } // Copy user data to session
+		async session({ session, token }) {
+			if (token) {
+				session.user.id = token.id as string
+				session.user.name = token.name as string
+				session.user.email = token.email as string
+				session.user.image = token.picture as string
 			}
 			return session
 		},
 
 		async jwt({ token, user }) {
 			if (user) {
-				token = { ...user } // Copy user data to token
+				token.id = user.id
 			} else {
 				const dbUser = await prisma.user.findFirst({
 					where: { email: token.email },
 				})
 				if (dbUser) {
-					token = { ...dbUser } // Copy dbUser data to token
+					token.id = dbUser.id
 				}
 			}
 			return token
-		},
-
-		async signIn({ account }) {
-			if (account) {
-				account.accessToken = account.access_token
-				account.tokenType = account.token_type
-				account.accessTokenExpires = account.expires_at
-				account.tokenId = account.id_token
-				delete account.access_token
-				delete account.token_type
-				delete account.expires_at
-				delete account.id_token
-			}
-			return true
 		},
 	},
 }
