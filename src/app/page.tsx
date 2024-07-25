@@ -9,7 +9,7 @@ const getMessage = async () => {
 }
 
 export default function Home() {
-	const { data, refetch, isFetched } = useQuery({
+	const { data, refetch } = useQuery({
 		queryKey: ["get-message"],
 		queryFn: getMessage,
 		enabled: false,
@@ -20,7 +20,7 @@ export default function Home() {
 			<button className="button" onClick={() => refetch()}>
 				Hello World!
 			</button>
-			<strong>{isFetched && JSON.stringify(data)}</strong>
+			{data?.message && <strong>{data.message}</strong>}
 		</div>
 	)
 }

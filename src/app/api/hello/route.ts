@@ -1,6 +1,6 @@
-import { NextRequest, NextResponse } from "next/server"
+import { NextResponse } from "next/server"
 
-export const GET = async (req: NextRequest, res: NextResponse) => {
+export const GET = async () => {
 	try {
 		const data = {
 			message: "Hello from the test route!",
@@ -8,6 +8,7 @@ export const GET = async (req: NextRequest, res: NextResponse) => {
 
 		return NextResponse.json(data)
 	} catch (error) {
-		console.error(error)
+		console.error("Error occurred:", error)
+		return NextResponse.json({ error: "Internal Server Error" }, { status: 500 })
 	}
 }

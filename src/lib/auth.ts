@@ -1,4 +1,4 @@
-import prisma from "@/src/lib/db"
+import { prisma } from "@/src/lib/db"
 import { PrismaAdapter } from "@next-auth/prisma-adapter"
 import { DefaultSession, SessionStrategy } from "next-auth"
 import GitHubProvider from "next-auth/providers/github"

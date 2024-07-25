@@ -66,5 +66,6 @@
 }
 
 .avatar {
+	box-shadow: 1px 0px 4px 0px var(--muted);
 	border-radius: 9999px;
 }
