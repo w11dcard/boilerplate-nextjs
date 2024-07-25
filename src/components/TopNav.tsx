@@ -6,7 +6,8 @@ import Image from "next/image"
 import Link from "next/link"
 import { useEffect, useState } from "react"
 
-function ThemeButton() {
+export default function TopNav() {
+	const { data: session } = useSession()
 	const [theme, setTheme] = useState("light")
 
 	const toggleTheme = () => setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"))
@@ -14,16 +15,6 @@ function ThemeButton() {
 	useEffect(() => {
 		document.documentElement.classList.toggle("dark", theme === "dark")
 	}, [theme])
-
-	return (
-		<button onClick={toggleTheme} className="button flex h-10 w-10 items-center justify-center">
-			<Icon icon={theme === "light" ? "material-symbols:light-mode-rounded" : "material-symbols:dark-mode-rounded"} />
-		</button>
-	)
-}
-
-export default function TopNav() {
-	const { data: session } = useSession()
 
 	return (
 		<nav className="mb-8 flex items-center justify-between p-2 shadow-md">
@@ -34,7 +25,11 @@ export default function TopNav() {
 			</div>
 
 			<div className="flex items-center gap-2">
-				<ThemeButton />
+				<button onClick={toggleTheme} className="button flex h-10 w-10 items-center justify-center">
+					<Icon
+						icon={theme === "light" ? "material-symbols:light-mode-rounded" : "material-symbols:dark-mode-rounded"}
+					/>
+				</button>
 				{session ? (
 					<>
 						<button onClick={() => signOut()} className="button">

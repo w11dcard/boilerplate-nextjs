@@ -1,8 +1,8 @@
+import Providers from "@/src/components/Providers"
+import TopNav from "@/src/components/TopNav"
+import { authOptions } from "@/src/lib/auth"
 import type { Metadata } from "next"
 import { getServerSession } from "next-auth"
-import Providers from "../components/Providers"
-import TopNav from "../components/TopNav"
-import { authOptions } from "../lib/auth"
 import "./globals.css"
 
 export const metadata: Metadata = {

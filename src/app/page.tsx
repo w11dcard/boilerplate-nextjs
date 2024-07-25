@@ -20,7 +20,7 @@ export default function Home() {
 			<button className="button" onClick={() => refetch()}>
 				Hello World!
 			</button>
-			{data?.message && <strong>{data.message}</strong>}
+			{data?.message && <strong className="mt-4">{data.message}</strong>}
 		</div>
 	)
 }
