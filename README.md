@@ -1,18 +1,19 @@
-# Next.js Boilerplate 📚🚀
+# Next.js Boilerplate 🚀
 
-Simple setup for starting a Next.js-powered website.
+Quickstart for a Next.js-powered website, with Prisma ORM and NextAuth integration.
 
-### Features
+## Features
 
-- Next.js App Router
-- TypeScript
-- Tailwind CSS
-- shadcn/ui suport for components
-- Simple light/dark theme switcher
-- NextAuth for authentication
-- React Query support for data fetching
-- Prisma ORM for handling database operations
-- Prettier & ESLint support
+- Next.js with App Router.
+- TypeScript.
+- Tailwind CSS.
+- Light/dark theme switch.
+- shadcn/ui integration for UI components.
+- NextAuth integration for authentication.
+- React Query integration for data fetching.
+- Prisma ORM for database management.
+- Playwright for testing.
+- Prettier & ESLint support.
 
 ## Getting Started
 
