@@ -1,6 +1,7 @@
 "use client"
 
 import { useQuery } from "@tanstack/react-query"
+import TopNav from "../components/TopNav"
 
 const getMessage = async () => {
 	const response = await fetch("/api/hello")
@@ -16,11 +17,16 @@ export default function Home() {
 	})
 
 	return (
-		<div className="flex flex-col items-center p-4">
-			<button className="button" onClick={() => refetch()}>
-				Hello World!
-			</button>
-			{data?.message && <strong className="mt-4">{data.message}</strong>}
-		</div>
+		<>
+			<TopNav />
+			<main>
+				<div className="flex flex-col items-center p-4">
+					<button className="button" onClick={() => refetch()}>
+						Hello World!
+					</button>
+					{data?.message && <strong className="mt-4">{data.message}</strong>}
+				</div>
+			</main>
+		</>
 	)
 }
