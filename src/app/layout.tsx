@@ -3,6 +3,8 @@ import { authOptions } from "@/src/lib/auth"
 import type { Metadata } from "next"
 import { getServerSession } from "next-auth"
 import { Inter } from "next/font/google"
+import Footer from "../components/Footer"
+import TopNav from "../components/TopNav"
 import "./globals.css"
 
 export const metadata: Metadata = {
@@ -22,7 +24,9 @@ export default async function RootLayout({ children }: { children: React.ReactNo
 		<html lang="en" className={inter.className}>
 			<body>
 				<Providers session={session}>
+					<TopNav />
 					<main>{children}</main>
+					<Footer />
 				</Providers>
 			</body>
 		</html>

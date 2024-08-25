@@ -56,8 +56,9 @@
 
 .button {
 	box-shadow: 1px 0px 4px 0px var(--muted);
-	border-radius: 1rem;
 	padding: 0.5rem;
+	border-radius: 0.5rem;
+	text-align: center;
 	font-weight: 700;
 }
 
