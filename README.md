@@ -1,24 +1,39 @@
 # Next.js Boilerplate 🚀
 
-Quickstart for a Next.js-powered website, with Prisma ORM and NextAuth integration.
+A boilerplate for building a full-stack web application using Next.js, TypeScript, Tailwind CSS, and more.
 
-## Features
+## Key Features
 
 - Next.js with App Router.
 - TypeScript.
 - Tailwind CSS.
 - Light/dark theme switch.
 - shadcn/ui integration for UI components.
-- NextAuth integration for authentication.
 - React Query integration for data fetching.
+- NextAuth for authentication, with Google & GitHub providers.
 - Prisma ORM for database management.
-- Playwright for testing.
+- Playwright for integration & end-to-end testing.
 - Prettier & ESLint support.
 
 ## Getting Started
 
-1. Clone this repository inside the project folder: `git clone https://github.com/matimortari/boilerplate-nextjs .`
-2. Install dependencies: `npm install`
+1. Run the following commands on your shell:
+
+   ```bash
+   git clone https://github.com/matimortari/boilerplate-nextjs .
+   ```
+
+2. Install necessary dependencies:
+
+   ```bash
+   npm install
+   ```
+
+3. Run the project in development mode:
+
+   ```bash
+   npm run dev
+   ```
 
 ## 📬 Contact
 
