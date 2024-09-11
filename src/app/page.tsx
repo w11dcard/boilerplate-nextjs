@@ -16,13 +16,16 @@ export default function Home() {
 	})
 
 	return (
-		<>
-			<div className="flex h-screen flex-col items-center p-4">
-				<button className="button" onClick={() => refetch()}>
-					Hello World!
-				</button>
-				{data?.message && <strong className="mt-4">{data.message}</strong>}
-			</div>
-		</>
+		<div className="m-8 flex h-screen flex-col items-center">
+			<button className="button" onClick={() => refetch()}>
+				Hello World!
+			</button>
+
+			{data?.message && (
+				<div className="m-4">
+					<strong>{data.message}</strong>
+				</div>
+			)}
+		</div>
 	)
 }

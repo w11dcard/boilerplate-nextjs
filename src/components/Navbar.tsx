@@ -17,22 +17,22 @@ export default function Navbar() {
 	}, [theme])
 
 	return (
-		<nav className="mb-8 flex items-center justify-between p-2 shadow-md">
-			<div className="flex items-center">
+		<nav className="flex items-center justify-between p-2 shadow-md">
+			<div className="flex items-center gap-2">
 				<Link className="button" href="/">
 					Home
 				</Link>
 			</div>
 
 			<div className="flex items-center gap-2">
-				<button onClick={toggleTheme} className="button flex h-10 w-10 items-center justify-center">
+				<button onClick={toggleTheme} className="button h-10 w-10">
 					<Icon
 						icon={theme === "light" ? "material-symbols:light-mode-rounded" : "material-symbols:dark-mode-rounded"}
 					/>
 				</button>
 
 				{session ? (
-					<div className="flex flex-row items-center gap-2">
+					<div className="flex items-center gap-2">
 						<button onClick={() => signOut()} className="button">
 							Sign Out
 						</button>
