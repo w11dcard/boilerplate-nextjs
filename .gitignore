@@ -4,7 +4,6 @@ out/
 test/
 tests/
 coverage/
-.scannerwork/
 node_modules/
 .vercel/
 .vscode/
