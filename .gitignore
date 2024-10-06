@@ -1,8 +1,8 @@
 dist/
 build/
 out/
-test/
 tests/
+test-results/
 coverage/
 node_modules/
 .vercel/

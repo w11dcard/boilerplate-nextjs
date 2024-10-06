@@ -12,7 +12,8 @@ A boilerplate for building a full-stack web application using Next.js, TypeScrip
 - React Query integration for data fetching.
 - NextAuth for authentication, with Google & GitHub providers.
 - Prisma ORM for database management.
-- Playwright for integration & end-to-end testing.
+- Vitest for unit & integration testing.
+- Playwright for end-to-end testing.
 - Prettier & ESLint support.
 
 ## Getting Started
